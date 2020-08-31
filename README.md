@@ -4,6 +4,15 @@ This project is initialized with [Ant Design Pro](https://pro.ant.design). Follo
 
 ## Environment Prepare
 
+用npm下载
+npm create umi my-app
+
+清除缓存：运行
+npm cache clean --force
+
+重新安装：
+npm install
+
 Install `node_modules`:
 
 ```bash
