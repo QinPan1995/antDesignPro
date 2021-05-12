@@ -10,7 +10,7 @@ const proSettings = {
   menu: {
     locale: true,
   },
-  title: 'Ant Design Pro',
+  title: '悦孚斯科技',
   pwa: false,
   iconfontUrl: '',
 };
