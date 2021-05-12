@@ -13,6 +13,8 @@ class AvatarDropdown extends React.Component {
       const { dispatch } = this.props;
 
       if (dispatch) {
+        //清除前端token
+        localStorage.removeItem('token');
         dispatch({
           type: 'login/logout',
         });

@@ -30,15 +30,16 @@ const Model = {
       const response = yield call(fakeAccountLogin, payload);
       yield put({
         type: 'changeLoginStatus',
-        payload: response,
+        payload: response.data,
       }); // Login successfully
 
-      if (response.status === 'ok') {
+      if (response.status === 'ok' || response.code === 200) {
         message.success('登录成功！');
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
-        let { redirect } = params;
 
+        let { redirect } = params;
+        localStorage.setItem('token', response.data.tokenType + response.data.token);
         if (redirect) {
           const redirectUrlParams = new URL(redirect);
 
@@ -53,8 +54,9 @@ const Model = {
             return;
           }
         }
-
         history.replace(redirect || '/');
+      } else {
+        message.error('登录失败！');
       }
     },
 

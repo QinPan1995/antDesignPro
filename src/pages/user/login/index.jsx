@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Link, connect } from 'umi';
 import styles from './style.less';
 import LoginFrom from './components/Login';
+import { PageLoading } from '@ant-design/pro-layout';
 const { Tab, UserName, Password, Mobile, Captcha, Submit } = LoginFrom;
 
 const LoginMessage = ({ content }) => (
@@ -40,7 +41,7 @@ const Login = (props) => {
           )}
 
           <UserName
-            name="userName"
+            name="usernameOrEmailOrPhone"
             placeholder="用户名: admin or user"
             rules={[
               {
